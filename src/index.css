@@ -1,44 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 2%;
-    --foreground: 0 0% 97%;
+    --background: 240 10% 2%;
+    --foreground: 0 0% 98%;
 
-    --card: 240 5% 7%;
-    --card-foreground: 0 0% 97%;
+    --card: 240 5% 4%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 240 5% 7%;
-    --popover-foreground: 0 0% 97%;
+    --popover: 240 5% 4%;
+    --popover-foreground: 0 0% 98%;
 
     --primary: 43 100% 50%;
-    --primary-foreground: 0 0% 2%;
+    --primary-foreground: 240 10% 2%;
 
-    --secondary: 240 4% 10%;
-    --secondary-foreground: 0 0% 97%;
+    --secondary: 240 5% 10%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 240 4% 10%;
-    --muted-foreground: 240 2% 73%;
+    --muted: 240 5% 10%;
+    --muted-foreground: 240 5% 65%;
 
     --accent: 43 100% 50%;
-    --accent-foreground: 0 0% 2%;
+    --accent-foreground: 240 10% 2%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 97%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 100%;
-    --input: 240 4% 12%;
+    --border: 240 5% 12%;
+    --input: 240 5% 12%;
     --ring: 43 100% 50%;
 
-    --radius: 0.25rem;
+    --radius: 2.5rem;
 
-    --surface: 240 5% 4%;
+    --surface: 240 10% 3%;
     --amber: 43 100% 50%;
-    --amber-foreground: 0 0% 2%;
+    --amber-foreground: 240 10% 2%;
   }
 }
 
@@ -48,13 +46,13 @@
   }
 
   body {
-    @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
-    background-color: #050505;
+    @apply bg-background text-foreground antialiased selection:bg-amber/30 selection:text-amber-foreground;
+    font-family: 'Geist', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Outfit', sans-serif;
+    @apply tracking-tighter leading-none;
   }
 }
 
@@ -63,41 +61,53 @@
     font-family: 'Outfit', sans-serif;
   }
 
-  .font-inter {
-    font-family: 'Inter', sans-serif;
+  .font-geist {
+    font-family: 'Geist', sans-serif;
   }
 
-  .glass-card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.1);
+  .font-mono {
+    font-family: 'Geist Mono', monospace;
+  }
+
+  /* Liquid Glass Refraction */
+  .glass-refraction {
+    @apply backdrop-blur-xl bg-white/[0.03] border border-white/10;
+    box-shadow: 
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Diffusion Shadow */
+  .shadow-diffusion {
+    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Hardware Accelerated Grain */
+  .perpetual-pixel::before {
+    content: "";
+    @apply fixed inset-0 z-[100] pointer-events-none opacity-[0.03] mix-blend-overlay;
+    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+    filter: brightness(100%) contrast(150%);
   }
 
   .glass-card-hover {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.1);
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    @apply glass-refraction transition-all duration-500 ease-out;
   }
 
   .glass-card-hover:hover {
-    transform: translateY(-6px);
-    border-color: rgba(255, 184, 0, 0.4);
-    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.7);
+    @apply -translate-y-2 border-amber/30 bg-white/[0.05];
+    box-shadow: 
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      0 25px 50px -12px rgba(0, 0, 0, 0.8),
+      0 0 20px -5px rgba(255, 184, 0, 0.2);
   }
 
   .amber-text {
-    color: #FFB800;
-  }
-
-  .text-muted-custom {
-    color: #B7B7BE;
-  }
-
-  .border-glass {
-    border-color: rgba(255, 255, 255, 0.1);
+    @apply text-amber;
   }
 
   .animate-ticker {
-    animation: ticker 30s linear infinite;
+    animation: ticker 40s linear infinite;
   }
 
   @keyframes ticker {
@@ -105,18 +115,9 @@
     100% { transform: translateX(-50%); }
   }
 
-  .fade-in-up {
-    animation: fadeInUp 0.7s ease forwards;
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  /* Premium Spring Physics */
+  .transition-spring {
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 }
+

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Zap, ChevronRight, ArrowRight, Shield, Globe, Cpu } from "lucide-react";
 
 const jobs = [
   {
@@ -14,7 +16,7 @@ const jobs = [
     preferred: "Experience with BESS integration and grid interconnection studies is a plus.",
   },
   {
-    title: "Project Manager — Renewable Infrastructure",
+    title: "Project Manager",
     location: "Chennai, Tamil Nadu",
     type: "Full-Time",
     requirements: [
@@ -26,7 +28,7 @@ const jobs = [
     preferred: "Background in renewable energy or power infrastructure preferred.",
   },
   {
-    title: "Sales Engineer — Enterprise Accounts",
+    title: "Sales Engineer",
     location: "Pan India (Remote + Travel)",
     type: "Full-Time",
     requirements: [
@@ -40,111 +42,137 @@ const jobs = [
 ];
 
 const techReqs = [
-  { label: "Panel Standards", value: "IEC 61215 / IEC 61730 certified Tier-1 modules" },
-  { label: "Inverter Protocol", value: "SMA, Fronius, Huawei — RS485 / Modbus RTU" },
-  { label: "Monitoring Platform", value: "Proprietary GridStack + third-party SCADA" },
-  { label: "Grid Connection", value: "TNEB / BESCOM grid code compliant" },
-  { label: "Safety Standards", value: "IS 13947, IS 13010, CEA Safety Regulations" },
-  { label: "Structural Load", value: "IS 875 wind + dead load certified mounts" },
-  { label: "EPC Certification", value: "MNRE Empanelled EPC Contractor" },
-  { label: "O&M SLA", value: "98.6% uptime guarantee, 4-hour response SLA" },
+  { icon: Shield, label: "Panel Standards", value: "IEC 61215 / IEC 61730 certified Tier-1 modules" },
+  { icon: Globe, label: "Inverter Protocol", value: "SMA, Fronius, Huawei — RS485 / Modbus RTU" },
+  { icon: Cpu, label: "Monitoring Platform", value: "Proprietary GridStack + third-party SCADA" },
+  { icon: Zap, label: "Grid Connection", value: "TNEB / BESCOM grid code compliant" },
 ];
 
 export default function Careers() {
   const [applied, setApplied] = useState<string | null>(null);
 
   return (
-    <main className="bg-[#030303] min-h-screen pt-24">
+    <main className="bg-[#030303] min-h-screen pt-32 perpetual-pixel">
       {/* Hero */}
-      <section
-        className="relative py-32 overflow-hidden"
-        style={{
-          backgroundImage: `linear-gradient(to bottom, rgba(3,3,3,0.8) 0%, rgba(3,3,3,1) 100%), url(https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&q=80&sat=-20)`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          filter: "saturate(0.8)",
-        }}
-      >
+      <section className="relative py-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <p className="font-inter text-xs tracking-[0.3em] uppercase text-amber mb-4">Join the Mission</p>
-          <h1 className="font-outfit font-black text-5xl md:text-8xl uppercase text-foreground leading-[0.85] tracking-tighter mb-8 max-w-4xl">
-            Build the Future<br />
-            <span className="text-amber">of Energy.</span>
-          </h1>
-          <p className="font-inter text-base text-[#B7B7BE] max-w-xl leading-relaxed">
-            We're building India's most technically advanced solar infrastructure company. If you're an engineer, project leader, or business builder — and you care about the grid — we want to hear from you.
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="font-geist text-[10px] tracking-[0.4em] uppercase text-amber mb-6 font-bold flex items-center gap-3">
+              <span className="w-8 h-[1px] bg-amber/40" />
+              Join the Mission
+            </p>
+            <h1 className="font-outfit font-black text-6xl md:text-9xl uppercase text-foreground leading-[0.8] tracking-tighter mb-10 max-w-5xl">
+              Power the<br />
+              <span className="text-amber">Infrastructure.</span>
+            </h1>
+            <p className="font-geist text-sm text-muted-foreground max-w-xl leading-relaxed">
+              We're building India's most technically advanced solar infrastructure company. Engineering the grid, one megawatt at a time.
+            </p>
+          </motion.div>
         </div>
       </section>
 
       {/* Job Listings */}
       <section className="max-w-7xl mx-auto px-6 py-24">
-        <h2 className="font-outfit font-black text-4xl uppercase text-foreground mb-12 leading-[0.85] tracking-tighter">Open Positions</h2>
+        <h2 className="font-outfit font-black text-4xl uppercase text-foreground mb-12 tracking-tight">Open Positions</h2>
         <div className="space-y-6">
           {jobs.map((job, i) => (
-            <div key={i} className="glass-card rounded-sm p-10">
-              <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-6">
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, scale: 0.98 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="glass-refraction rounded-[2.5rem] p-12 group hover:bg-white/[0.04] transition-spring border-white/5"
+            >
+              <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 mb-10">
                 <div>
-                  <h3 className="font-outfit font-bold text-2xl uppercase text-foreground mb-2">{job.title}</h3>
-                  <div className="flex items-center gap-4">
-                    <span className="font-inter text-xs text-[#B7B7BE]">{job.location}</span>
-                    <span className="font-inter text-xs tracking-widest uppercase text-amber border border-amber/30 px-3 py-1 bg-transparent">{job.type}</span>
+                  <h3 className="font-outfit font-black text-3xl uppercase text-foreground mb-4 group-hover:text-amber transition-colors">{job.title}</h3>
+                  <div className="flex items-center gap-6">
+                    <span className="font-geist text-[10px] tracking-widest uppercase text-muted-foreground font-bold">{job.location}</span>
+                    <span className="font-geist text-[10px] tracking-widest uppercase text-amber font-bold flex items-center gap-2">
+                      <Zap className="w-3 h-3" />
+                      {job.type}
+                    </span>
                   </div>
                 </div>
                 <button
                   onClick={() => setApplied(job.title)}
-                  className={`flex-shrink-0 font-outfit font-bold text-xs tracking-widest uppercase px-6 py-3 transition-all ${
-                    applied === job.title
-                      ? "bg-green-500/20 text-green-400 border border-green-500/30 cursor-default"
-                      : "bg-amber text-[#050505] hover:bg-amber/90"
-                  }`}
+                  className={`flex-shrink-0 font-outfit font-black text-[10px] tracking-widest uppercase px-10 py-5 rounded-full transition-spring ${applied === job.title
+                      ? "bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 cursor-default"
+                      : "bg-amber text-black hover:bg-white active:scale-95"
+                    }`}
                 >
-                  {applied === job.title ? "Application Sent ✓" : "Apply Now"}
+                  {applied === job.title ? "Sent" : "Apply Now"}
                 </button>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-12">
                 <div>
-                  <p className="font-inter text-xs tracking-widest uppercase text-[#B7B7BE] mb-3">Requirements</p>
-                  <ul className="space-y-2">
+                  <p className="font-geist text-[10px] tracking-widest uppercase text-muted-foreground mb-6 font-bold">Requirements</p>
+                  <ul className="space-y-4">
                     {job.requirements.map((req, j) => (
-                      <li key={j} className="flex items-start gap-2 font-inter text-sm text-[#B7B7BE]">
-                        <span className="w-1 h-1 rounded-full bg-amber flex-shrink-0 mt-2" />
+                      <li key={j} className="flex items-start gap-4 font-geist text-sm text-foreground">
+                        <ChevronRight className="w-4 h-4 text-amber flex-shrink-0 mt-0.5" />
                         {req}
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <p className="font-inter text-xs tracking-widest uppercase text-[#B7B7BE] mb-3">Preferred</p>
-                  <p className="font-inter text-sm text-[#B7B7BE] leading-relaxed">{job.preferred}</p>
+                  <p className="font-geist text-[10px] tracking-widest uppercase text-muted-foreground mb-6 font-bold">Preferred</p>
+                  <p className="font-geist text-sm text-muted-foreground leading-relaxed italic border-l-2 border-amber/30 pl-6">{job.preferred}</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
 
-      {/* Technical Requirements Spec Sheet */}
+      {/* Technical Standards */}
       <section className="max-w-7xl mx-auto px-6 pb-32">
-        <h2 className="font-outfit font-black text-4xl uppercase text-foreground mb-4 leading-[0.85] tracking-tighter">Technical Requirements</h2>
-        <p className="font-inter text-sm text-[#B7B7BE] mb-8">Our engineering environment and standards spec sheet.</p>
+        <div className="glass-refraction rounded-[3rem] p-12 md:p-20 border-amber/10 relative overflow-hidden">
+          <div className="relative z-10">
+            <h2 className="font-outfit font-black text-4xl uppercase text-foreground mb-4 tracking-tight">Technical Standards</h2>
+            <p className="font-geist text-sm text-muted-foreground mb-12 max-w-md">Our engineering environment and protocol stack.</p>
 
-        <div className="border border-white/10 divide-y divide-white/10">
-          {techReqs.map((req, i) => (
-            <div key={i} className="grid md:grid-cols-3 gap-4 px-6 py-4 hover:bg-white/[0.02] transition-colors">
-              <span className="font-inter text-xs tracking-widest uppercase text-amber">{req.label}</span>
-              <span className="font-inter text-sm text-foreground md:col-span-2">{req.value}</span>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {techReqs.map((req, i) => (
+                <div key={i} className="space-y-4">
+                  <div className="w-12 h-12 glass-refraction rounded-2xl flex items-center justify-center text-amber">
+                    <req.icon className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="font-geist text-[10px] tracking-widest uppercase text-muted-foreground mb-1 font-bold">{req.label}</p>
+                    <p className="font-geist text-sm text-foreground font-bold leading-tight">{req.value}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 py-8">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="font-inter text-xs text-[#B7B7BE] tracking-widest uppercase">© 2024 Techlab Solars — Chennai, India</p>
-          <p className="font-inter text-xs text-[#B7B7BE]">Energy Infrastructure Powerhouse</p>
+      <footer className="border-t border-white/5 py-12">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center">
+              <Zap className="w-4 h-4 text-amber" />
+            </div>
+            <p className="font-geist text-[10px] text-muted-foreground tracking-[0.3em] uppercase font-bold">
+              © 2024 Techlab Solars — Chennai, India
+            </p>
+          </div>
+          <div className="flex gap-8">
+            <a href="#" className="font-geist text-[10px] text-muted-foreground hover:text-amber tracking-widest uppercase transition-colors">Privacy</a>
+            <a href="#" className="font-geist text-[10px] text-muted-foreground hover:text-amber tracking-widest uppercase transition-colors">Terms</a>
+            <a href="#" className="font-geist text-[10px] text-muted-foreground hover:text-amber tracking-widest uppercase transition-colors">LinkedIn</a>
+          </div>
         </div>
       </footer>
     </main>

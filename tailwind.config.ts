@@ -15,7 +15,8 @@ export default {
     extend: {
       fontFamily: {
         outfit: ['Outfit', 'sans-serif'],
-        inter: ['Inter', 'sans-serif'],
+        geist: ['Geist', 'sans-serif'],
+        mono: ['Geist Mono', 'monospace'],
       },
       colors: {
         border: "hsl(var(--border) / 0.1)",
@@ -24,10 +25,10 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         amber: {
-          DEFAULT: "#FFB800",
-          foreground: "#050505",
+          DEFAULT: "hsl(var(--amber))",
+          foreground: "hsl(var(--amber-foreground))",
         },
-        surface: "#08080A",
+        surface: "hsl(var(--surface))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
