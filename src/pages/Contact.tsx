@@ -76,11 +76,13 @@ export default function Contact() {
             {/* Map placeholder */}
             <div
               className="mt-12 h-64 rounded-[2.5rem] overflow-hidden border border-white/5 relative group cursor-crosshair"
+              role="img"
+              aria-label="Map location of Techlab Solars Headquarters in Chennai"
             >
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110 saturate-[0.1] group-hover:saturate-100"
                 style={{
-                  backgroundImage: `linear-gradient(rgba(5,5,5,0.7), rgba(5,5,5,0.8)), url(https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&q=80)`,
+                  backgroundImage: `linear-gradient(rgba(5,5,5,0.7), rgba(5,5,5,0.8)), url(https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&q=80&fm=webp)`,
                 }}
               />
               <div className="absolute inset-0 flex flex-col items-center justify-center">
@@ -105,6 +107,7 @@ export default function Contact() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 className="glass-refraction rounded-[2.5rem] p-12 text-center border-amber/20"
+                role="alert"
               >
                 <div className="w-16 h-16 bg-amber rounded-full flex items-center justify-center mx-auto mb-8 shadow-[0_0_30px_rgba(255,184,0,0.3)]">
                   <Zap className="w-8 h-8 text-black" fill="currentColor" />

@@ -70,13 +70,15 @@ export default function Services() {
             >
               <div
                 className="glass-card-hover rounded-[2.5rem] overflow-hidden aspect-[16/10] relative group"
+                role="img"
+                aria-label={service.title}
               >
                 <motion.div
                   initial={{ scale: 1 }}
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                   className="absolute inset-0 bg-cover bg-center transition-all duration-1000 saturate-[0.1] group-hover:saturate-[0.4]"
-                  style={{ backgroundImage: `url(${service.image}&sat=-20)` }}
+                  style={{ backgroundImage: `url(${service.image}&fm=webp&q=80&sat=-20)` }}
                 />
               </div>
               <div className="px-4">
@@ -109,8 +111,8 @@ export default function Services() {
             >
               <div className="aspect-video rounded-[1.5rem] overflow-hidden mb-8 border border-white/5">
                 <img
-                  src={s.image}
-                  alt={s.title}
+                  src={`${s.image}&fm=webp&q=80`}
+                  alt={`${s.title} integration visualization`}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-full object-cover saturate-[0.1] group-hover:saturate-[0.5] transition-all duration-700"

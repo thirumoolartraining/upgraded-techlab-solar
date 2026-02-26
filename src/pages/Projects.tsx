@@ -113,10 +113,14 @@ export default function Projects() {
               className="grid md:grid-cols-12 gap-12"
             >
               <div className="md:col-span-7">
-                <div className="relative rounded-[2.5rem] overflow-hidden aspect-video border border-white/5 group">
+                <div
+                  className="relative rounded-[2.5rem] overflow-hidden aspect-video border border-white/5 group"
+                  role="img"
+                  aria-label={`Visual report for project ${p.id}`}
+                >
                   <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105 saturate-[0.1] group-hover:saturate-100"
-                    style={{ backgroundImage: `url(${p.image})` }}
+                    style={{ backgroundImage: `url(${p.image}&fm=webp&q=80)` }}
                   />
                   <div className="absolute top-8 left-8">
                     <div className="glass-refraction rounded-full px-6 py-2 flex items-center gap-3">
@@ -145,13 +149,25 @@ export default function Projects() {
 
                 <div className="mt-10 flex gap-4">
                   <div className="w-1/2 aspect-video rounded-2xl overflow-hidden border border-white/5 relative group">
-                    <img src={p.beforeImage} loading="lazy" decoding="async" className="w-full h-full object-cover saturate-0 transition-all group-hover:saturate-50" />
+                    <img
+                      src={`${p.beforeImage}&fm=webp&q=60`}
+                      alt={`Pre-installation state of project ${p.id}`}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover saturate-0 transition-all group-hover:saturate-50"
+                    />
                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-100 group-hover:opacity-0 transition-opacity">
                       <span className="font-geist text-[8px] tracking-widest uppercase font-bold">Pre-Install</span>
                     </div>
                   </div>
                   <div className="w-1/2 aspect-video rounded-2xl overflow-hidden border border-amber/20 relative group">
-                    <img src={p.afterImage} loading="lazy" decoding="async" className="w-full h-full object-cover saturate-0 transition-all group-hover:saturate-100" />
+                    <img
+                      src={`${p.afterImage}&fm=webp&q=70`}
+                      alt={`Post-installation state of project ${p.id}`}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover saturate-0 transition-all group-hover:saturate-100"
+                    />
                     <div className="absolute inset-0 bg-amber/20 flex items-center justify-center">
                       <span className="font-geist text-[8px] tracking-widest uppercase font-bold text-black">Post-Install</span>
                     </div>

@@ -42,7 +42,7 @@ export default function Navigation() {
         >
           <Link to="/" className="flex items-center gap-2 group">
             <div className="w-9 h-9 bg-amber rounded-xl flex items-center justify-center transition-spring group-hover:rotate-12 group-hover:scale-110">
-              <Zap className="w-4 h-4 text-[#050505]" fill="currentColor" />
+              <Zap className="w-4 h-4 text-[#050505]" fill="currentColor" aria-hidden="true" />
             </div>
             <span className="font-outfit font-black text-sm tracking-widest uppercase text-foreground">
               Techlab <span className="text-amber">Solars</span>
@@ -91,6 +91,8 @@ export default function Navigation() {
         <button
           className="md:hidden text-foreground p-2 glass-refraction rounded-lg"
           onClick={() => setMenuOpen(!menuOpen)}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
         >
           {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>

@@ -90,11 +90,13 @@ export default function Home() {
         <motion.div
           style={{ y: heroY, opacity: heroOpacity }}
           className="absolute inset-0 z-0"
+          role="img"
+          aria-label="Solar panel installation under clear sky"
         >
           <div
             className="absolute inset-0 bg-cover bg-center transition-all duration-700 saturate-[0.2] hover:saturate-[0.5]"
             style={{
-              backgroundImage: `linear-gradient(to bottom, rgba(3,3,3,0.5) 0%, rgba(3,3,3,0.8) 60%, rgba(3,3,3,1) 100%), url(https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&q=80)`
+              backgroundImage: `linear-gradient(to bottom, rgba(3,3,3,0.5) 0%, rgba(3,3,3,0.8) 60%, rgba(3,3,3,1) 100%), url(https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&q=80&fm=webp)`
             }}
           />
         </motion.div>
@@ -177,13 +179,15 @@ export default function Home() {
           >
             <div
               className="glass-card-hover rounded-[2.5rem] overflow-hidden aspect-[16/9] md:aspect-auto md:h-[500px] relative group"
+              role="img"
+              aria-label="Grid-ready solar infrastructure installation"
             >
               <motion.div
                 initial={{ scale: 1 }}
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                 className="absolute inset-0 bg-cover bg-center saturate-[0.1] group-hover:saturate-[0.4] transition-all duration-1000"
-                style={{ backgroundImage: `url(https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1000&q=80)` }}
+                style={{ backgroundImage: `url(https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1000&q=80&fm=webp)` }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
@@ -206,13 +210,15 @@ export default function Home() {
           >
             <div
               className="glass-card-hover rounded-[2.5rem] overflow-hidden aspect-square md:h-[500px] relative group"
+              role="img"
+              aria-label="Solar monitoring intelligence layer"
             >
               <motion.div
                 initial={{ scale: 1 }}
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                 className="absolute inset-0 bg-cover bg-center saturate-[0.1] group-hover:saturate-[0.4] transition-all duration-1000"
-                style={{ backgroundImage: `url(https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80)` }}
+                style={{ backgroundImage: `url(https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&fm=webp)` }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
