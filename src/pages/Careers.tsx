@@ -54,19 +54,20 @@ export default function Careers() {
   const [applied, setApplied] = useState<string | null>(null);
 
   return (
-    <main className="bg-[#050505] min-h-screen pt-24">
+    <main className="bg-[#030303] min-h-screen pt-24">
       {/* Hero */}
       <section
         className="relative py-32 overflow-hidden"
         style={{
-          backgroundImage: `linear-gradient(to bottom, rgba(5,5,5,0.7) 0%, rgba(5,5,5,1) 100%), url(https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&q=80)`,
+          backgroundImage: `linear-gradient(to bottom, rgba(3,3,3,0.8) 0%, rgba(3,3,3,1) 100%), url(https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&q=80&sat=-20)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
+          filter: "saturate(0.8)",
         }}
       >
         <div className="max-w-7xl mx-auto px-6">
           <p className="font-inter text-xs tracking-[0.3em] uppercase text-amber mb-4">Join the Mission</p>
-          <h1 className="font-outfit font-black text-5xl md:text-8xl uppercase text-foreground leading-tight mb-6 max-w-4xl">
+          <h1 className="font-outfit font-black text-5xl md:text-8xl uppercase text-foreground leading-[0.85] tracking-tighter mb-8 max-w-4xl">
             Build the Future<br />
             <span className="text-amber">of Energy.</span>
           </h1>
@@ -77,17 +78,17 @@ export default function Careers() {
       </section>
 
       {/* Job Listings */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
-        <h2 className="font-outfit font-black text-3xl uppercase text-foreground mb-8">Open Positions</h2>
-        <div className="space-y-4">
+      <section className="max-w-7xl mx-auto px-6 py-24">
+        <h2 className="font-outfit font-black text-4xl uppercase text-foreground mb-12 leading-[0.85] tracking-tighter">Open Positions</h2>
+        <div className="space-y-6">
           {jobs.map((job, i) => (
-            <div key={i} className="glass-card rounded-sm p-8">
+            <div key={i} className="glass-card rounded-sm p-10">
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-6">
                 <div>
-                  <h3 className="font-outfit font-bold text-xl uppercase text-foreground mb-1">{job.title}</h3>
+                  <h3 className="font-outfit font-bold text-2xl uppercase text-foreground mb-2">{job.title}</h3>
                   <div className="flex items-center gap-4">
                     <span className="font-inter text-xs text-[#B7B7BE]">{job.location}</span>
-                    <span className="font-inter text-xs tracking-widest uppercase text-amber border border-amber/30 px-2 py-0.5">{job.type}</span>
+                    <span className="font-inter text-xs tracking-widest uppercase text-amber border border-amber/30 px-3 py-1 bg-transparent">{job.type}</span>
                   </div>
                 </div>
                 <button
@@ -125,8 +126,8 @@ export default function Careers() {
       </section>
 
       {/* Technical Requirements Spec Sheet */}
-      <section className="max-w-7xl mx-auto px-6 pb-24">
-        <h2 className="font-outfit font-black text-3xl uppercase text-foreground mb-2">Technical Requirements</h2>
+      <section className="max-w-7xl mx-auto px-6 pb-32">
+        <h2 className="font-outfit font-black text-4xl uppercase text-foreground mb-4 leading-[0.85] tracking-tighter">Technical Requirements</h2>
         <p className="font-inter text-sm text-[#B7B7BE] mb-8">Our engineering environment and standards spec sheet.</p>
 
         <div className="border border-white/10 divide-y divide-white/10">

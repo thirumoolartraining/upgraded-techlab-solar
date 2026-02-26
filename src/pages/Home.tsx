@@ -47,21 +47,22 @@ export default function Home() {
   const tickerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <main className="bg-[#050505] min-h-screen">
+    <main className="bg-[#030303] min-h-screen">
       {/* Hero */}
       <section
         className="relative min-h-screen flex flex-col justify-center overflow-hidden"
         style={{
-          backgroundImage: `linear-gradient(to bottom, rgba(5,5,5,0.5) 0%, rgba(5,5,5,0.65) 60%, rgba(5,5,5,1) 100%), url(https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1920&q=80)`,
+          backgroundImage: `linear-gradient(to bottom, rgba(3,3,3,0.7) 0%, rgba(3,3,3,0.8) 60%, rgba(3,3,3,1) 100%), url(https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1920&q=80&sat=-20)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
+          filter: "saturate(0.8)",
         }}
       >
         <div className="max-w-7xl mx-auto px-6 pt-32 pb-24">
           <p className="font-inter text-xs tracking-[0.3em] uppercase text-amber mb-6 opacity-90">
             Energy Infrastructure — India
           </p>
-          <h1 className="font-outfit font-black text-[clamp(3rem,10vw,9rem)] leading-[0.9] tracking-tight uppercase text-foreground mb-8 max-w-4xl">
+          <h1 className="font-outfit font-black text-[clamp(3.5rem,11vw,10rem)] leading-[0.85] tracking-tighter uppercase text-foreground mb-12 max-w-4xl">
             Dominate<br />
             <span className="text-amber">the Grid.</span>
           </h1>
@@ -78,7 +79,7 @@ export default function Home() {
             </Link>
             <Link
               to="/projects"
-              className="inline-flex items-center gap-3 border border-white/20 text-foreground font-outfit font-bold text-xs tracking-widest uppercase px-8 py-4 hover:border-amber/40 hover:text-amber transition-all"
+              className="inline-flex items-center gap-3 border border-white/10 text-foreground font-outfit font-bold text-xs tracking-widest uppercase px-8 py-4 hover:border-amber/40 hover:text-amber transition-all bg-black/20"
             >
               View Projects
             </Link>
@@ -92,7 +93,7 @@ export default function Home() {
       </section>
 
       {/* Scrolling Ticker */}
-      <div className="border-y border-white/10 bg-[#0B0B0D] overflow-hidden py-4">
+      <div className="border-y border-white/10 bg-[#08080A] overflow-hidden py-4">
         <div className="flex animate-ticker whitespace-nowrap">
           {[...metrics, ...metrics].map((item, i) => (
             <span key={i} className="inline-flex items-center gap-4 px-8 font-outfit font-bold text-xs tracking-widest uppercase text-[#B7B7BE]">
@@ -104,9 +105,9 @@ export default function Home() {
       </div>
 
       {/* Bento Grid */}
-      <section className="max-w-7xl mx-auto px-6 py-24">
+      <section className="max-w-7xl mx-auto px-6 py-32">
         <p className="font-inter text-xs tracking-[0.3em] uppercase text-amber mb-4">Infrastructure Systems</p>
-        <h2 className="font-outfit font-black text-4xl md:text-6xl uppercase text-foreground mb-16 leading-tight">
+        <h2 className="font-outfit font-black text-4xl md:text-6xl uppercase text-foreground mb-16 leading-[0.85] tracking-tighter">
           Built for the Grid.
         </h2>
         <div className="grid md:grid-cols-5 gap-4">
@@ -114,12 +115,13 @@ export default function Home() {
           <div
             className="md:col-span-3 glass-card-hover rounded-sm overflow-hidden min-h-[480px] flex flex-col justify-end relative"
             style={{
-              backgroundImage: `linear-gradient(to top, rgba(5,5,5,0.95) 30%, rgba(5,5,5,0.2) 100%), url(https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1200&q=80)`,
+              backgroundImage: `linear-gradient(to top, rgba(3,3,3,0.97) 30%, rgba(3,3,3,0.2) 100%), url(https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1200&q=80&sat=-20)`,
               backgroundSize: "cover",
               backgroundPosition: "center",
+              filter: "saturate(0.8)",
             }}
           >
-            <div className="p-8">
+            <div className="p-10">
               <span className="font-inter text-xs tracking-widest uppercase text-amber mb-3 block">Large Scale</span>
               <h3 className="font-outfit font-bold text-2xl uppercase text-foreground mb-3">Grid-Ready Solar Infrastructure</h3>
               <p className="font-inter text-sm text-[#B7B7BE] leading-relaxed">
@@ -132,12 +134,13 @@ export default function Home() {
           <div
             className="md:col-span-2 glass-card-hover rounded-sm overflow-hidden min-h-[480px] flex flex-col justify-end relative"
             style={{
-              backgroundImage: `linear-gradient(to top, rgba(5,5,5,0.95) 30%, rgba(5,5,5,0.2) 100%), url(https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80)`,
+              backgroundImage: `linear-gradient(to top, rgba(3,3,3,0.97) 30%, rgba(3,3,3,0.2) 100%), url(https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&sat=-20)`,
               backgroundSize: "cover",
               backgroundPosition: "center",
+              filter: "saturate(0.8)",
             }}
           >
-            <div className="p-8">
+            <div className="p-10">
               <span className="font-inter text-xs tracking-widest uppercase text-amber mb-3 block">Intelligence Layer</span>
               <h3 className="font-outfit font-bold text-2xl uppercase text-foreground mb-3">Smart Monitoring Systems</h3>
               <p className="font-inter text-sm text-[#B7B7BE] leading-relaxed">
@@ -149,7 +152,7 @@ export default function Home() {
       </section>
 
       {/* Metrics Row */}
-      <section className="border-y border-white/10 bg-[#0B0B0D]">
+      <section className="border-y border-white/10 bg-[#08080A]">
         <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10">
           {stat.map((s, i) => (
             <div key={i} className="px-8 py-4">
@@ -161,11 +164,11 @@ export default function Home() {
       </section>
 
       {/* GridStack Platform */}
-      <section className="max-w-7xl mx-auto px-6 py-24">
+      <section className="max-w-7xl mx-auto px-6 py-32">
         <div className="grid md:grid-cols-2 gap-16 mb-16">
           <div>
             <p className="font-inter text-xs tracking-[0.3em] uppercase text-amber mb-4">Platform</p>
-            <h2 className="font-outfit font-black text-4xl md:text-6xl uppercase text-foreground leading-tight">
+            <h2 className="font-outfit font-black text-4xl md:text-6xl uppercase text-foreground leading-[0.85] tracking-tighter">
               Introducing<br />Techlab<br /><span className="text-amber">GridStack</span>
             </h2>
           </div>
@@ -194,14 +197,20 @@ export default function Home() {
       </section>
 
       {/* Amber CTA */}
-      <section className="bg-amber py-24">
+      <section 
+        className="relative py-32 overflow-hidden"
+        style={{
+          background: `linear-gradient(135deg, #FFB800 0%, #E6A500 50%, #CC9400 100%), radial-gradient(circle at 20% 50%, rgba(255,255,255,0.03) 0%, transparent 50%)`,
+          backgroundImage: `linear-gradient(135deg, #FFB800 0%, #E6A500 50%, #CC9400 100%), radial-gradient(circle at 20% 50%, rgba(255,255,255,0.03) 0%, transparent 50%), repeating-radial-gradient(circle at 50% 50%, transparent 0, rgba(0,0,0,0.03) 1px, transparent 2px, transparent 40px)`,
+        }}
+      >
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
-          <h2 className="font-outfit font-black text-3xl md:text-5xl uppercase text-[#050505] leading-tight max-w-2xl">
+          <h2 className="font-outfit font-black text-4xl md:text-6xl uppercase text-[#050505] leading-[0.85] tracking-tighter max-w-3xl">
             Ready to convert sunlight into infrastructure-grade value?
           </h2>
           <Link
             to="/contact"
-            className="flex-shrink-0 inline-flex items-center gap-3 bg-[#050505] text-amber font-outfit font-bold text-xs tracking-widest uppercase px-10 py-5 hover:bg-[#111114] transition-colors group"
+            className="flex-shrink-0 inline-flex items-center gap-3 bg-[#050505] text-amber font-outfit font-bold text-sm tracking-widest uppercase px-12 py-6 hover:bg-[#111114] transition-colors group"
           >
             Contact Techlab
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

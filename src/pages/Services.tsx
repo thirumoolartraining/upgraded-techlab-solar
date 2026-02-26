@@ -40,10 +40,10 @@ const subServices = [
 
 export default function Services() {
   return (
-    <main className="bg-[#050505] min-h-screen pt-24">
+    <main className="bg-[#030303] min-h-screen pt-24">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <p className="font-inter text-xs tracking-[0.3em] uppercase text-amber mb-4">What We Do</p>
-        <h1 className="font-outfit font-black text-5xl md:text-8xl uppercase text-foreground mb-16 leading-tight">
+        <h1 className="font-outfit font-black text-5xl md:text-8xl uppercase text-foreground mb-16 leading-[0.85] tracking-tighter">
           Services
         </h1>
 
@@ -52,17 +52,18 @@ export default function Services() {
           {mainServices.map((service, i) => (
             <div
               key={i}
-              className={`md:col-span-${service.size === "col-span-3" ? "3" : "2"} glass-card-hover rounded-sm overflow-hidden min-h-[520px] flex flex-col justify-end relative`}
+              className={`md:col-span-${service.size === "col-span-3" ? "3" : "2"} glass-card-hover rounded-sm overflow-hidden min-h-[560px] flex flex-col justify-end relative`}
               style={{
-                backgroundImage: `linear-gradient(to top, rgba(5,5,5,0.97) 35%, rgba(5,5,5,0.1) 100%), url(${service.image})`,
+                backgroundImage: `linear-gradient(to top, rgba(3,3,3,0.97) 35%, rgba(3,3,3,0.1) 100%), url(${service.image}&sat=-20)`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
+                filter: "saturate(0.8)",
               }}
             >
-              <div className="p-8">
+              <div className="p-10">
                 <span className="font-inter text-xs tracking-widest uppercase text-amber mb-3 block">{service.tag}</span>
-                <h2 className="font-outfit font-bold text-2xl uppercase text-foreground mb-3">{service.title}</h2>
-                <p className="font-inter text-sm text-[#B7B7BE] leading-relaxed mb-6">{service.desc}</p>
+                <h2 className="font-outfit font-bold text-3xl uppercase text-foreground mb-3">{service.title}</h2>
+                <p className="font-inter text-sm text-[#B7B7BE] leading-relaxed mb-6 max-w-lg">{service.desc}</p>
                 <ul className="space-y-1">
                   {service.specs.map((spec, j) => (
                     <li key={j} className="flex items-center gap-2 font-inter text-xs text-[#B7B7BE]">
@@ -81,15 +82,16 @@ export default function Services() {
           {subServices.map((s, i) => (
             <div
               key={i}
-              className="glass-card-hover rounded-sm overflow-hidden min-h-[360px] flex flex-col justify-end relative"
+              className="glass-card-hover rounded-sm overflow-hidden min-h-[400px] flex flex-col justify-end relative"
               style={{
-                backgroundImage: `linear-gradient(to top, rgba(5,5,5,0.97) 40%, rgba(5,5,5,0.2) 100%), url(${s.image})`,
+                backgroundImage: `linear-gradient(to top, rgba(3,3,3,0.97) 40%, rgba(3,3,3,0.2) 100%), url(${s.image}&sat=-20)`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
+                filter: "saturate(0.8)",
               }}
             >
-              <div className="p-6">
-                <h3 className="font-outfit font-bold text-xl uppercase text-foreground mb-2">{s.title}</h3>
+              <div className="p-8">
+                <h3 className="font-outfit font-bold text-2xl uppercase text-foreground mb-2">{s.title}</h3>
                 <p className="font-inter text-sm text-[#B7B7BE] leading-relaxed">{s.desc}</p>
               </div>
             </div>
@@ -98,9 +100,9 @@ export default function Services() {
       </div>
 
       {/* CTA */}
-      <div className="border-t border-white/10 py-20">
+      <div className="border-t border-white/10 py-24">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
-          <h2 className="font-outfit font-black text-3xl md:text-5xl uppercase text-foreground leading-tight">
+          <h2 className="font-outfit font-black text-4xl md:text-6xl uppercase text-foreground leading-[0.85] tracking-tighter">
             Ready to engineer<br />your energy future?
           </h2>
           <Link

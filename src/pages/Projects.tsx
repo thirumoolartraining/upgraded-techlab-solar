@@ -6,8 +6,8 @@ const projects = [
     capacity: "500 kW",
     location: "Coimbatore",
     image: "https://images.unsplash.com/photo-1548337138-e87d889cc369?w=1200&q=80",
-    beforeImage: "https://images.unsplash.com/photo-1565183997392-2f6f122e5912?w=600&q=80",
-    afterImage: "https://images.unsplash.com/photo-1548337138-e87d889cc369?w=600&q=80",
+    beforeImage: "https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?w=600&q=80&sat=-20",
+    afterImage: "https://images.unsplash.com/photo-1548337138-e87d889cc369?w=600&q=80&sat=-20",
     specs: {
       Capacity: "500 kW",
       "Panels Installed": "1,250 Units (400W)",
@@ -21,8 +21,8 @@ const projects = [
     capacity: "120 kW",
     location: "Chennai",
     image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&q=80",
-    beforeImage: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&q=80",
-    afterImage: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&q=80",
+    beforeImage: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&q=80&sat=-20",
+    afterImage: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&q=80&sat=-20",
     specs: {
       Capacity: "120 kW",
       "Panels Installed": "300 Units (400W)",
@@ -36,8 +36,8 @@ const projects = [
     capacity: "1.2 MW",
     location: "Industrial Estate",
     image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1200&q=80",
-    beforeImage: "https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?w=600&q=80",
-    afterImage: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&q=80",
+    beforeImage: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=600&q=80&sat=-20",
+    afterImage: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&q=80&sat=-20",
     specs: {
       Capacity: "1.2 MW",
       "Panels Installed": "3,000 Units (400W)",
@@ -50,10 +50,10 @@ const projects = [
 
 export default function Projects() {
   return (
-    <main className="bg-[#050505] min-h-screen pt-24">
+    <main className="bg-[#030303] min-h-screen pt-24">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <p className="font-inter text-xs tracking-[0.3em] uppercase text-amber mb-4">Deployments</p>
-        <h1 className="font-outfit font-black text-5xl md:text-8xl uppercase text-foreground mb-4 leading-tight">
+        <h1 className="font-outfit font-black text-5xl md:text-8xl uppercase text-foreground mb-4 leading-[0.85] tracking-tighter">
           Project Log
         </h1>
         <p className="font-inter text-sm text-[#B7B7BE] mb-16 max-w-lg">
@@ -68,9 +68,9 @@ export default function Projects() {
           <span className="font-inter text-xs tracking-widest uppercase text-[#B7B7BE]">Status</span>
         </div>
         {projects.map((p) => (
-          <div key={p.id} className="grid md:grid-cols-4 items-center border-b border-white/10 py-4 hover:bg-white/[0.02] px-2 transition-colors">
-            <span className="font-outfit font-bold text-xl text-foreground">PROJECT {p.id}</span>
-            <span className="font-outfit font-bold text-xl text-amber">{p.capacity}</span>
+          <div key={p.id} className="grid md:grid-cols-4 items-center border-b border-white/10 py-6 hover:bg-white/[0.02] px-2 transition-colors">
+            <span className="font-outfit font-black text-2xl text-foreground">PROJECT {p.id}</span>
+            <span className="font-outfit font-black text-2xl text-amber">{p.capacity}</span>
             <span className="font-inter text-sm text-[#B7B7BE]">{p.location}</span>
             <span className="font-inter text-xs tracking-widest uppercase text-green-400 flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" /> Operational
@@ -80,17 +80,18 @@ export default function Projects() {
       </div>
 
       {/* Project Cards */}
-      <div className="max-w-7xl mx-auto px-6 pb-16 space-y-8">
-        <h2 className="font-outfit font-black text-3xl uppercase text-foreground mb-8">Detailed Reports</h2>
+      <div className="max-w-7xl mx-auto px-6 pb-16 space-y-12">
+        <h2 className="font-outfit font-black text-4xl uppercase text-foreground mb-8 leading-[0.85] tracking-tighter">Detailed Reports</h2>
         {projects.map((p) => (
           <div key={p.id} className="glass-card rounded-sm overflow-hidden">
             {/* Hero image */}
             <div
               className="h-64 md:h-96 w-full relative"
               style={{
-                backgroundImage: `linear-gradient(to bottom, transparent 40%, rgba(5,5,5,1) 100%), url(${p.image})`,
+                backgroundImage: `linear-gradient(to bottom, transparent 40%, rgba(3,3,3,1) 100%), url(${p.image}&sat=-20)`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
+                filter: "saturate(0.8)",
               }}
             >
               <div className="absolute top-6 left-6">
@@ -100,10 +101,10 @@ export default function Projects() {
               </div>
             </div>
 
-            <div className="p-8 grid md:grid-cols-2 gap-8">
+            <div className="p-10 grid md:grid-cols-2 gap-8">
               <div>
                 <p className="font-inter text-xs tracking-widest uppercase text-amber mb-2">{p.location}</p>
-                <h3 className="font-outfit font-bold text-2xl uppercase text-foreground mb-4">
+                <h3 className="font-outfit font-bold text-3xl uppercase text-foreground mb-4">
                   {p.capacity} Solar Installation
                 </h3>
                 <p className="font-inter text-sm text-[#B7B7BE] leading-relaxed mb-6">{p.desc}</p>
