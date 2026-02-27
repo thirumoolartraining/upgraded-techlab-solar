@@ -87,7 +87,7 @@ export default function Careers() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="glass-refraction rounded-[2.5rem] p-12 group hover:bg-white/[0.04] transition-spring border-white/5"
+              className="glass-refraction rounded-none p-12 group hover:bg-white/[0.04] transition-spring border-white/5"
             >
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 mb-10">
                 <div>
@@ -102,7 +102,7 @@ export default function Careers() {
                 </div>
                 <button
                   onClick={() => setApplied(job.title)}
-                  className={`flex-shrink-0 font-outfit font-black text-[10px] tracking-widest uppercase px-10 py-5 rounded-full transition-spring ${applied === job.title
+                  className={`flex-shrink-0 font-outfit font-black text-[10px] tracking-widest uppercase px-10 py-5 rounded-none transition-spring ${applied === job.title
                     ? "bg-emerald-500/10 text-emerald-500 border border-emerald-500/20 cursor-default"
                     : "bg-amber text-black hover:bg-white active:scale-95"
                     }`}
@@ -135,7 +135,7 @@ export default function Careers() {
 
       {/* Technical Standards */}
       <section className="max-w-7xl mx-auto px-6 pb-32">
-        <div className="glass-refraction rounded-[3rem] p-12 md:p-20 border-amber/10 relative overflow-hidden">
+        <div className="glass-refraction rounded-none p-12 md:p-20 border-amber/10 relative overflow-hidden">
           <div className="relative z-10">
             <h2 className="font-outfit font-black text-4xl uppercase text-foreground mb-4 tracking-tight">Technical Standards</h2>
             <p className="font-geist text-sm text-muted-foreground mb-12 max-w-md">Our engineering environment and protocol stack.</p>
@@ -144,7 +144,7 @@ export default function Careers() {
               {techReqs.map((req, i) => (
                 <div key={i} className="space-y-4">
                   <div
-                    className="w-12 h-12 glass-refraction rounded-2xl flex items-center justify-center text-amber"
+                    className="w-12 h-12 glass-refraction rounded-none flex items-center justify-center text-amber"
                     aria-hidden="true"
                   >
                     <req.icon className="w-5 h-5" />

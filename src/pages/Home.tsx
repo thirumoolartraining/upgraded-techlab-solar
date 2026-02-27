@@ -38,10 +38,10 @@ const capabilities = [
 ];
 
 const stat = [
-  { value: "Up to 40%", label: "Energy Cost Reduction", icon: Activity },
-  { value: "≤ 30 Days", label: "Installation Planning", icon: Clock },
-  { value: "Real-Time", label: "Performance Monitoring", icon: Zap },
-  { value: "25 Years", label: "Modeled Output Lifecycle", icon: Shield },
+  { value: "Up to 40%", label: "Energy Cost Reduction" },
+  { value: "≤ 30 Days", label: "Installation Planning" },
+  { value: "Real-Time", label: "Performance Monitoring" },
+  { value: "25 Years", label: "Modeled Output Lifecycle" },
 ];
 
 function MagneticButton({ children, className, to }: { children: React.ReactNode; className?: string; to: string }) {
@@ -245,13 +245,6 @@ export default function Home() {
               transition={{ delay: i * 0.1 }}
               className="px-8 flex flex-col items-center md:items-start text-center md:text-left group"
             >
-              <motion.div
-                animate={{ y: [0, -5, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: i * 0.2 }}
-                className="w-12 h-12 rounded-none glass-refraction flex items-center justify-center text-amber mb-6 group-hover:scale-110 group-hover:bg-amber group-hover:text-black transition-spring"
-              >
-                <s.icon className="w-5 h-5" />
-              </motion.div>
               <div className="font-outfit font-black text-5xl text-foreground mb-3 group-hover:text-amber transition-colors">{s.value}</div>
               <div className="font-geist text-[10px] text-muted-foreground tracking-[0.2em] uppercase font-bold">{s.label}</div>
             </motion.div>
