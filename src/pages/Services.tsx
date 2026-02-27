@@ -69,7 +69,7 @@ export default function Services() {
               className={`${service.size} flex flex-col gap-6`}
             >
               <div
-                className="glass-card-hover rounded-[2.5rem] overflow-hidden aspect-[16/10] relative group"
+                className="glass-card-hover rounded-none overflow-hidden aspect-[16/10] relative group"
                 role="img"
                 aria-label={service.title}
               >
@@ -107,9 +107,9 @@ export default function Services() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="glass-refraction rounded-[2.5rem] p-10 group hover:bg-white/[0.05] transition-spring"
+              className="glass-refraction rounded-none p-10 group hover:bg-white/[0.05] transition-spring"
             >
-              <div className="aspect-video rounded-[1.5rem] overflow-hidden mb-8 border border-white/5">
+              <div className="aspect-video rounded-none overflow-hidden mb-8 border border-white/5">
                 <img
                   src={`${s.image}&fm=webp&q=80`}
                   alt={`${s.title} integration visualization`}
@@ -131,7 +131,7 @@ export default function Services() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="relative rounded-[3rem] py-24 px-10 md:px-20 overflow-hidden border border-white/10 glass-refraction"
+          className="relative rounded-none py-24 px-10 md:px-20 overflow-hidden border border-white/10 glass-refraction"
         >
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
             <h2 className="font-outfit font-black text-4xl md:text-7xl uppercase text-foreground leading-[0.8] tracking-tighter max-w-4xl">
@@ -139,7 +139,7 @@ export default function Services() {
             </h2>
             <Link
               to="/contact"
-              className="flex-shrink-0 inline-flex items-center gap-4 bg-amber text-black font-outfit font-black text-xs tracking-[0.2em] uppercase px-14 py-8 rounded-full hover:bg-white transition-spring group scale-100 hover:scale-[1.05] active:scale-95"
+              className="flex-shrink-0 inline-flex items-center gap-4 bg-amber text-black font-outfit font-black text-xs tracking-[0.2em] uppercase px-14 py-8 rounded-none hover:bg-white transition-spring group scale-100 hover:scale-[1.05] active:scale-95"
             >
               Get Started
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

@@ -121,14 +121,14 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-6">
               <MagneticButton
                 to="/contact"
-                className="inline-flex items-center gap-3 bg-amber text-black font-outfit font-black text-[10px] tracking-[0.2em] uppercase px-10 py-5 rounded-full hover:bg-white transition-spring group"
+                className="inline-flex items-center gap-3 bg-amber text-black font-outfit font-black text-[10px] tracking-[0.2em] uppercase px-10 py-5 rounded-none hover:bg-white transition-spring group"
               >
                 Request Site Survey
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </MagneticButton>
               <Link
                 to="/projects"
-                className="inline-flex items-center gap-3 glass-refraction text-foreground font-outfit font-black text-[10px] tracking-[0.2em] uppercase px-10 py-5 rounded-full hover:bg-white/5 transition-spring"
+                className="inline-flex items-center gap-3 glass-refraction text-foreground font-outfit font-black text-[10px] tracking-[0.2em] uppercase px-10 py-5 rounded-none hover:bg-white/5 transition-spring"
               >
                 View Projects
               </Link>
@@ -178,7 +178,7 @@ export default function Home() {
             className="md:col-span-8 flex flex-col gap-6"
           >
             <div
-              className="glass-card-hover rounded-[2.5rem] overflow-hidden aspect-[16/9] md:aspect-auto md:h-[500px] relative group"
+              className="glass-card-hover rounded-none overflow-hidden aspect-[16/9] md:aspect-auto md:h-[500px] relative group"
               role="img"
               aria-label="Grid-ready solar infrastructure installation"
             >
@@ -209,7 +209,7 @@ export default function Home() {
             className="md:col-span-4 flex flex-col gap-6"
           >
             <div
-              className="glass-card-hover rounded-[2.5rem] overflow-hidden aspect-square md:h-[500px] relative group"
+              className="glass-card-hover rounded-none overflow-hidden aspect-square md:h-[500px] relative group"
               role="img"
               aria-label="Solar monitoring intelligence layer"
             >
@@ -248,7 +248,7 @@ export default function Home() {
               <motion.div
                 animate={{ y: [0, -5, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: i * 0.2 }}
-                className="w-12 h-12 rounded-2xl glass-refraction flex items-center justify-center text-amber mb-6 group-hover:scale-110 group-hover:bg-amber group-hover:text-black transition-spring"
+                className="w-12 h-12 rounded-none glass-refraction flex items-center justify-center text-amber mb-6 group-hover:scale-110 group-hover:bg-amber group-hover:text-black transition-spring"
               >
                 <s.icon className="w-5 h-5" />
               </motion.div>
@@ -292,7 +292,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="glass-refraction rounded-[2.5rem] p-10 group cursor-default hover:bg-white/[0.05] transition-spring border-white/5 active:scale-[0.98]"
+              className="glass-refraction rounded-none p-10 group cursor-default hover:bg-white/[0.05] transition-spring border-white/5 active:scale-[0.98]"
             >
               <div className="flex justify-between items-start mb-8">
                 <span className="font-mono font-bold text-xs tracking-widest text-amber">{cap.number}</span>
@@ -313,7 +313,7 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="relative rounded-[3rem] py-32 px-10 md:px-20 overflow-hidden"
+          className="relative rounded-none py-32 px-10 md:px-20 overflow-hidden"
           style={{
             background: `linear-gradient(135deg, #FFB800 0%, #E6A500 50%, #CC9400 100%)`,
           }}
@@ -325,7 +325,7 @@ export default function Home() {
             </h2>
             <Link
               to="/contact"
-              className="flex-shrink-0 inline-flex items-center gap-4 bg-black text-amber font-outfit font-black text-xs tracking-[0.2em] uppercase px-14 py-8 rounded-full hover:bg-zinc-900 transition-spring group scale-100 hover:scale-[1.05] active:scale-95"
+              className="flex-shrink-0 inline-flex items-center gap-4 bg-black text-amber font-outfit font-black text-xs tracking-[0.2em] uppercase px-14 py-8 rounded-none hover:bg-zinc-900 transition-spring group scale-100 hover:scale-[1.05] active:scale-95"
             >
               Contact Techlab
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

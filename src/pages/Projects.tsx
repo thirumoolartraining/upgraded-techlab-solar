@@ -86,7 +86,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="grid md:grid-cols-5 items-center bg-white/[0.02] hover:bg-white/[0.05] border border-white/5 rounded-2xl px-10 py-6 transition-spring group cursor-pointer"
+              className="grid md:grid-cols-5 items-center bg-white/[0.02] hover:bg-white/[0.05] border border-white/5 rounded-none px-10 py-6 transition-spring group cursor-pointer"
             >
               <span className="font-outfit font-black text-xl text-foreground group-hover:text-amber transition-colors">#{p.id}</span>
               <span className="font-geist text-lg tracking-tighter text-foreground font-bold">{p.capacity}</span>
@@ -94,7 +94,7 @@ export default function Projects() {
               <span className="font-geist text-[10px] tracking-widest uppercase text-muted-foreground font-bold">Grid-Tie EPC</span>
               <div className="flex items-center justify-end gap-3 text-emerald-500">
                 <span className="font-geist text-[10px] tracking-widest uppercase font-bold">Active</span>
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_10px_rgba(16,185,129,0.5)]" />
+                <span className="w-2 h-2 rounded-none bg-emerald-500 animate-pulse shadow-[0_0_10px_rgba(16,185,129,0.5)]" />
               </div>
             </motion.div>
           ))}
@@ -114,7 +114,7 @@ export default function Projects() {
             >
               <div className="md:col-span-7">
                 <div
-                  className="relative rounded-[2.5rem] overflow-hidden aspect-video border border-white/5 group"
+                  className="relative rounded-none overflow-hidden aspect-video border border-white/5 group"
                   role="img"
                   aria-label={`Visual report for project ${p.id}`}
                 >
@@ -148,7 +148,7 @@ export default function Projects() {
                 </div>
 
                 <div className="mt-10 flex gap-4">
-                  <div className="w-1/2 aspect-video rounded-2xl overflow-hidden border border-white/5 relative group">
+                  <div className="w-1/2 aspect-video rounded-none overflow-hidden border border-white/5 relative group">
                     <img
                       src={`${p.beforeImage}&fm=webp&q=60`}
                       alt={`Pre-installation state of project ${p.id}`}
@@ -160,7 +160,7 @@ export default function Projects() {
                       <span className="font-geist text-[8px] tracking-widest uppercase font-bold">Pre-Install</span>
                     </div>
                   </div>
-                  <div className="w-1/2 aspect-video rounded-2xl overflow-hidden border border-amber/20 relative group">
+                  <div className="w-1/2 aspect-video rounded-none overflow-hidden border border-amber/20 relative group">
                     <img
                       src={`${p.afterImage}&fm=webp&q=70`}
                       alt={`Post-installation state of project ${p.id}`}
