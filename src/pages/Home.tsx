@@ -149,7 +149,7 @@ export default function Home() {
       </section>
 
       {/* Scrolling Ticker */}
-      <div className="border-y border-white/10 bg-[#08080A] overflow-hidden py-6">
+      <div className="border-y border-white/10 bg-[#08080A] overflow-hidden py-6" aria-hidden="true">
         <div className="flex animate-ticker whitespace-nowrap">
           {[...metrics, ...metrics].map((item, i) => (
             <span key={i} className="inline-flex items-center gap-6 px-12 font-outfit font-black text-[10px] tracking-[0.3em] uppercase text-muted-foreground">

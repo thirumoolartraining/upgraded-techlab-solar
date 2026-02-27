@@ -108,6 +108,7 @@ export default function Contact() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="glass-refraction rounded-[2.5rem] p-12 text-center border-amber/20"
                 role="alert"
+                aria-live="polite"
               >
                 <div className="w-16 h-16 bg-amber rounded-full flex items-center justify-center mx-auto mb-8 shadow-[0_0_30px_rgba(255,184,0,0.3)]">
                   <Zap className="w-8 h-8 text-black" fill="currentColor" />
@@ -127,9 +128,11 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="font-geist text-[10px] tracking-[0.2em] uppercase text-muted-foreground block mb-3 font-bold">Name *</label>
+                    <label htmlFor="name" className="font-geist text-[10px] tracking-[0.2em] uppercase text-muted-foreground block mb-3 font-bold">Name *</label>
                     <input
+                      id="name"
                       required
+                      aria-required="true"
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
                       placeholder="Full Name"
@@ -137,10 +140,12 @@ export default function Contact() {
                     />
                   </div>
                   <div>
-                    <label className="font-geist text-[10px] tracking-[0.2em] uppercase text-muted-foreground block mb-3 font-bold">Email *</label>
+                    <label htmlFor="email" className="font-geist text-[10px] tracking-[0.2em] uppercase text-muted-foreground block mb-3 font-bold">Email *</label>
                     <input
+                      id="email"
                       required
                       type="email"
+                      aria-required="true"
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
                       placeholder="you@company.com"
@@ -150,8 +155,9 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="font-geist text-[10px] tracking-[0.2em] uppercase text-muted-foreground block mb-3 font-bold">Company</label>
+                  <label htmlFor="company" className="font-geist text-[10px] tracking-[0.2em] uppercase text-muted-foreground block mb-3 font-bold">Company</label>
                   <input
+                    id="company"
                     value={form.company}
                     onChange={(e) => setForm({ ...form, company: e.target.value })}
                     placeholder="Company or Organization"
@@ -160,8 +166,9 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="font-geist text-[10px] tracking-[0.2em] uppercase text-muted-foreground block mb-3 font-bold">Monthly Electricity Usage (kWh)</label>
+                  <label htmlFor="usage" className="font-geist text-[10px] tracking-[0.2em] uppercase text-muted-foreground block mb-3 font-bold">Monthly Electricity Usage (kWh)</label>
                   <input
+                    id="usage"
                     type="number"
                     value={form.usage}
                     onChange={(e) => setForm({ ...form, usage: e.target.value })}
@@ -171,9 +178,11 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="font-geist text-[10px] tracking-[0.2em] uppercase text-muted-foreground block mb-3 font-bold">Message *</label>
+                  <label htmlFor="message" className="font-geist text-[10px] tracking-[0.2em] uppercase text-muted-foreground block mb-3 font-bold">Message *</label>
                   <textarea
+                    id="message"
                     required
+                    aria-required="true"
                     rows={5}
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}

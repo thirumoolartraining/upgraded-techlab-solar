@@ -122,5 +122,12 @@
                 background-color 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
                 border-color 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
+
+  /* Accessibility: High-Visibility Focus Rings */
+  @layer utilities {
+    *:focus-visible {
+      @apply outline-none ring-2 ring-amber ring-offset-2 ring-offset-background;
+    }
+  }
 }
 

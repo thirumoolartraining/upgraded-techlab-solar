@@ -71,8 +71,8 @@ export default function Projects() {
         </motion.div>
 
         {/* Project List */}
-        <div className="space-y-4 mb-32">
-          <div className="hidden md:grid grid-cols-5 px-10 pb-4 border-b border-white/5 opacity-40">
+        <div className="space-y-4 mb-32" role="list">
+          <div className="hidden md:grid grid-cols-5 px-10 pb-4 border-b border-white/5 opacity-40" aria-hidden="true">
             <span className="font-geist text-[10px] tracking-[0.2em] uppercase font-bold">Identifier</span>
             <span className="font-geist text-[10px] tracking-[0.2em] uppercase font-bold">Load Capacity</span>
             <span className="font-geist text-[10px] tracking-[0.2em] uppercase font-bold">Region</span>
@@ -80,13 +80,15 @@ export default function Projects() {
             <span className="font-geist text-[10px] tracking-[0.2em] uppercase font-bold text-right">Operational Status</span>
           </div>
           {projects.map((p, i) => (
-            <motion.div
+            <motion.button
               key={p.id}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="grid md:grid-cols-5 items-center bg-white/[0.02] hover:bg-white/[0.05] border border-white/5 rounded-none px-10 py-6 transition-spring group cursor-pointer"
+              role="listitem"
+              aria-label={`View details for Project ${p.id} in ${p.location}, capacity ${p.capacity}`}
+              className="w-full text-left grid md:grid-cols-5 items-center bg-white/[0.02] hover:bg-white/[0.05] border border-white/5 rounded-none px-10 py-6 transition-spring group cursor-pointer focus-visible:ring-inset"
             >
               <span className="font-outfit font-black text-xl text-foreground group-hover:text-amber transition-colors">#{p.id}</span>
               <span className="font-geist text-lg tracking-tighter text-foreground font-bold">{p.capacity}</span>
@@ -96,7 +98,7 @@ export default function Projects() {
                 <span className="font-geist text-[10px] tracking-widest uppercase font-bold">Active</span>
                 <span className="w-2 h-2 rounded-none bg-emerald-500 animate-pulse shadow-[0_0_10px_rgba(16,185,129,0.5)]" />
               </div>
-            </motion.div>
+            </motion.button>
           ))}
         </div>
 

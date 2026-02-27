@@ -51,7 +51,7 @@ export default function Navigation() {
         </motion.div>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden md:flex items-center gap-1" aria-label="Main Navigation">
           {navLinks.map((link, i) => (
             <motion.div
               key={link.to}
@@ -61,6 +61,7 @@ export default function Navigation() {
             >
               <Link
                 to={link.to}
+                aria-current={location.pathname === link.to ? "page" : undefined}
                 className={`px-4 py-2 rounded-full font-geist text-[10px] tracking-[0.2em] font-medium uppercase transition-spring ${location.pathname === link.to
                     ? "text-amber bg-amber/10"
                     : "text-muted-foreground hover:text-foreground hover:bg-white/5"

@@ -58,7 +58,7 @@ export default function Services() {
         </motion.div>
 
         {/* Main Grid */}
-        <div className="grid md:grid-cols-12 gap-10 mb-10">
+        <div className="grid md:grid-cols-12 gap-10 mb-10" role="list">
           {mainServices.map((service, i) => (
             <motion.div
               key={i}
@@ -67,11 +67,11 @@ export default function Services() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               className={`${service.size} flex flex-col gap-6`}
+              role="listitem"
             >
-              <div
+              <article
                 className="glass-card-hover rounded-none overflow-hidden aspect-[16/10] relative group"
-                role="img"
-                aria-label={service.title}
+                aria-labelledby={`service-title-${i}`}
               >
                 <motion.div
                   initial={{ scale: 1 }}
@@ -79,15 +79,17 @@ export default function Services() {
                   transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                   className="absolute inset-0 bg-cover bg-center transition-all duration-1000 saturate-[0.1] group-hover:saturate-[0.4]"
                   style={{ backgroundImage: `url(${service.image})` }}
+                  role="img"
+                  aria-label={`${service.title} visualization`}
                 />
-              </div>
+              </article>
               <div className="px-4">
                 <span className="font-geist text-[10px] tracking-widest uppercase text-amber mb-2 block font-bold">{service.tag}</span>
-                <h2 className="font-outfit font-black text-3xl uppercase text-foreground mb-3">{service.title}</h2>
+                <h2 id={`service-title-${i}`} className="font-outfit font-black text-3xl uppercase text-foreground mb-3">{service.title}</h2>
                 <p className="font-geist text-sm text-muted-foreground leading-relaxed mb-6 max-w-2xl">{service.desc}</p>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-4" role="list">
                   {service.specs.map((spec, j) => (
-                    <div key={j} className="flex items-center gap-3 font-geist text-[10px] text-muted-foreground uppercase tracking-widest font-bold">
+                    <div key={j} className="flex items-center gap-3 font-geist text-[10px] text-muted-foreground uppercase tracking-widest font-bold" role="listitem">
                       <Zap className="w-3 h-3 text-amber" />
                       {spec}
                     </div>
