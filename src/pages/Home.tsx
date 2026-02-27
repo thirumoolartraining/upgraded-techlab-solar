@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, ChevronRight, Zap, Globe, Shield, Activity, Clock } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from "framer-motion";
 
 const metrics = [
@@ -19,21 +18,25 @@ const capabilities = [
     number: "01",
     title: "Site Survey & Energy Audit",
     desc: "Precision on-site assessment using thermal imaging and load analysis to baseline your energy consumption profile.",
+    size: "md:col-span-8",
   },
   {
     number: "02",
     title: "Design & Engineering",
-    desc: "Structural, electrical, and grid-integration engineering by certified professionals. MNRE compliant designs.",
+    desc: "Structural, electrical, and grid-integration engineering by certified professionals.",
+    size: "md:col-span-4",
   },
   {
     number: "03",
-    title: "Deployment & Commissioning",
-    desc: "End-to-end installation with zero-downtime protocols. Full grid synchronization and safety compliance.",
+    title: "Deployment",
+    desc: "End-to-end installation with zero-downtime protocols. Full grid synchronization.",
+    size: "md:col-span-4",
   },
   {
     number: "04",
     title: "Monitoring & O&M",
-    desc: "24/7 remote performance monitoring, predictive maintenance alerts, and quarterly O&M site visits.",
+    desc: "24/7 remote performance monitoring and predictive maintenance alerts.",
+    size: "md:col-span-8",
   },
 ];
 
@@ -43,6 +46,29 @@ const stat = [
   { value: "Real-Time", label: "Performance Monitoring" },
   { value: "25 Years", label: "Modeled Output Lifecycle" },
 ];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.16, 1, 0.3, 1],
+    },
+  },
+};
 
 function MagneticButton({ children, className, to }: { children: React.ReactNode; className?: string; to: string }) {
   const mouseX = useMotionValue(0);
@@ -103,22 +129,22 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto px-6 pt-32 pb-24 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
           >
-            <p className="font-geist text-[10px] tracking-[0.4em] uppercase text-amber mb-8 opacity-80 flex items-center gap-3">
+            <motion.p variants={itemVariants} className="font-geist text-[10px] tracking-[0.4em] uppercase text-amber mb-8 opacity-80 flex items-center gap-3">
               <span className="w-8 h-[1px] bg-amber/40" />
               Energy Infrastructure — India
-            </p>
-            <h1 className="font-outfit font-black text-[clamp(4rem,12vw,11rem)] leading-[0.8] tracking-tighter uppercase text-foreground mb-12 max-w-5xl">
+            </motion.p>
+            <motion.h1 variants={itemVariants} className="font-outfit font-black text-[clamp(4rem,10vw,11rem)] leading-[0.8] tracking-tighter uppercase text-foreground mb-12 max-w-5xl">
               Dominate<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber to-amber/50">the Grid.</span>
-            </h1>
-            <p className="font-geist text-lg text-muted-foreground max-w-xl mb-12 leading-relaxed font-light">
+            </motion.h1>
+            <motion.p variants={itemVariants} className="font-geist text-lg text-muted-foreground max-w-xl mb-12 leading-relaxed font-light">
               Techlab Solars engineers high-performance solar infrastructure for residential, commercial, and industrial scale operations.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6">
+            </motion.p>
+            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-6">
               <MagneticButton
                 to="/contact"
                 className="inline-flex items-center gap-3 bg-amber text-black font-outfit font-black text-[10px] tracking-[0.2em] uppercase px-10 py-5 rounded-none hover:bg-white transition-spring group"
@@ -132,7 +158,7 @@ export default function Home() {
               >
                 View Projects
               </Link>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
 
@@ -162,19 +188,29 @@ export default function Home() {
 
       {/* Bento 2.0 Grid */}
       <section className="max-w-7xl mx-auto px-6 py-40">
-        <div className="mb-20">
-          <p className="font-geist text-[10px] tracking-[0.3em] uppercase text-amber mb-4 font-bold">Infrastructure Systems</p>
-          <h2 className="font-outfit font-black text-5xl md:text-8xl uppercase text-foreground leading-[0.8] tracking-tighter">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={containerVariants}
+          className="mb-20"
+        >
+          <motion.p variants={itemVariants} className="font-geist text-[10px] tracking-[0.3em] uppercase text-amber mb-4 font-bold">Infrastructure Systems</motion.p>
+          <motion.h2 variants={itemVariants} className="font-outfit font-black text-5xl md:text-8xl uppercase text-foreground leading-[0.8] tracking-tighter">
             Built for<br />the Grid.
-          </h2>
-        </div>
+          </motion.h2>
+        </motion.div>
 
-        <div className="grid md:grid-cols-12 gap-10">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={containerVariants}
+          className="grid md:grid-cols-12 gap-10"
+        >
           {/* Large Card */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            variants={itemVariants}
             className="md:col-span-8 flex flex-col gap-6"
           >
             <div
@@ -202,10 +238,7 @@ export default function Home() {
 
           {/* Small Card */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
+            variants={itemVariants}
             className="md:col-span-4 flex flex-col gap-6"
           >
             <div
@@ -226,66 +259,69 @@ export default function Home() {
               <span className="font-geist text-[10px] tracking-widest uppercase text-amber mb-2 block font-bold">Intelligence Layer</span>
               <h3 className="font-outfit font-black text-2xl uppercase text-foreground mb-3">Smart Monitoring</h3>
               <p className="font-geist text-sm text-muted-foreground leading-relaxed">
-                Real-time analytics and performance tracking with precision diagnostics for every installation.
+                Real-time analytics and performance tracking with precision diagnostics.
               </p>
             </div>
           </motion.div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Metrics Row */}
       <section className="border-y border-white/10 bg-[#08080A]">
-        <div className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-4 gap-12 md:divide-x md:divide-white/10">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={containerVariants}
+          className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-4 gap-12 md:divide-x md:divide-white/10"
+        >
           {stat.map((s, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
+              variants={itemVariants}
               className="px-8 flex flex-col items-center md:items-start text-center md:text-left group"
             >
               <div className="font-outfit font-black text-5xl text-foreground mb-3 group-hover:text-amber transition-colors">{s.value}</div>
               <div className="font-geist text-[10px] text-muted-foreground tracking-[0.2em] uppercase font-bold">{s.label}</div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
 
       {/* GridStack Platform */}
       <section className="max-w-7xl mx-auto px-6 py-40">
-        <div className="grid md:grid-cols-2 gap-20 mb-24">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={containerVariants}
+          className="grid md:grid-cols-2 gap-20 mb-24"
+        >
+          <motion.div variants={itemVariants}>
             <p className="font-geist text-[10px] tracking-[0.3em] uppercase text-amber mb-6 font-bold">The Platform</p>
             <h2 className="font-outfit font-black text-5xl md:text-8xl uppercase text-foreground leading-[0.8] tracking-tighter">
               Introducing<br /><span className="text-amber">GridStack</span>
             </h2>
           </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="flex items-center"
-          >
+          <motion.div variants={itemVariants} className="flex items-center">
             <p className="font-geist text-xl text-muted-foreground leading-relaxed font-light">
               GridStack is our integrated solar deployment, monitoring, optimization, and lifecycle management platform — engineered for infrastructure-grade operations at any scale.
             </p>
           </motion.div>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-4">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={containerVariants}
+          className="grid md:grid-cols-12 gap-4"
+        >
           {capabilities.map((cap, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="glass-refraction rounded-none p-10 group cursor-default hover:bg-white/[0.05] transition-spring border-white/5 active:scale-[0.98]"
+              variants={itemVariants}
+              className={`glass-refraction rounded-none p-10 group cursor-default hover:bg-white/[0.05] transition-spring border-white/5 active:scale-[0.98] ${cap.size}`}
             >
               <div className="flex justify-between items-start mb-8">
                 <span className="font-mono font-bold text-xs tracking-widest text-amber">{cap.number}</span>
@@ -297,7 +333,7 @@ export default function Home() {
               <p className="font-geist text-sm text-muted-foreground leading-relaxed">{cap.desc}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
 
       {/* Amber CTA */}
