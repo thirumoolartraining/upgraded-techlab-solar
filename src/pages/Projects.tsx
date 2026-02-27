@@ -6,9 +6,9 @@ const projects = [
     id: "ALPHA",
     capacity: "500 kW",
     location: "Coimbatore",
-    image: "https://images.unsplash.com/photo-1548337138-e87d889cc369?w=1200&q=80",
-    beforeImage: "https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?w=600&q=80&sat=-20",
-    afterImage: "https://images.unsplash.com/photo-1548337138-e87d889cc369?w=600&q=80&sat=-20",
+    image: "https://images.unsplash.com/photo-1548337138-e87d889cc369?auto=format&fit=crop&w=1200&q=80",
+    beforeImage: "https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?auto=format&fit=crop&w=600&q=80",
+    afterImage: "https://images.unsplash.com/photo-1548337138-e87d889cc369?auto=format&fit=crop&w=600&q=80",
     specs: {
       Capacity: "500 kW",
       "Panels Installed": "1,250 Units (400W)",
@@ -21,9 +21,9 @@ const projects = [
     id: "DELTA",
     capacity: "120 kW",
     location: "Chennai",
-    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&q=80",
-    beforeImage: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&q=80&sat=-20",
-    afterImage: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&q=80&sat=-20",
+    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80",
+    beforeImage: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=600&q=80",
+    afterImage: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=600&q=80",
     specs: {
       Capacity: "120 kW",
       "Panels Installed": "300 Units (400W)",
@@ -36,9 +36,9 @@ const projects = [
     id: "SIGMA",
     capacity: "1.2 MW",
     location: "Industrial Estate",
-    image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1200&q=80",
-    beforeImage: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=600&q=80&sat=-20",
-    afterImage: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&q=80&sat=-20",
+    image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1200&q=80",
+    beforeImage: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=600&q=80",
+    afterImage: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=600&q=80",
     specs: {
       Capacity: "1.2 MW",
       "Panels Installed": "3,000 Units (400W)",
@@ -120,7 +120,7 @@ export default function Projects() {
                 >
                   <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105 saturate-[0.1] group-hover:saturate-100"
-                    style={{ backgroundImage: `url(${p.image}&fm=webp&q=80)` }}
+                    style={{ backgroundImage: `url(${p.image})` }}
                   />
                   <div className="absolute top-8 left-8">
                     <div className="glass-refraction rounded-full px-6 py-2 flex items-center gap-3">
@@ -150,7 +150,7 @@ export default function Projects() {
                 <div className="mt-10 flex gap-4">
                   <div className="w-1/2 aspect-video rounded-none overflow-hidden border border-white/5 relative group">
                     <img
-                      src={`${p.beforeImage}&fm=webp&q=60`}
+                      src={p.beforeImage}
                       alt={`Pre-installation state of project ${p.id}`}
                       loading="lazy"
                       decoding="async"
@@ -162,7 +162,7 @@ export default function Projects() {
                   </div>
                   <div className="w-1/2 aspect-video rounded-none overflow-hidden border border-amber/20 relative group">
                     <img
-                      src={`${p.afterImage}&fm=webp&q=70`}
+                      src={p.afterImage}
                       alt={`Post-installation state of project ${p.id}`}
                       loading="lazy"
                       decoding="async"

@@ -6,7 +6,7 @@ const mainServices = [
   {
     title: "Residential Solar Infrastructure",
     size: "col-span-8",
-    image: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1200&q=80",
     tag: "Residential",
     desc: "Engineered rooftop systems delivering maximum power density per square meter. Grid-tied and off-grid configurations for homes and housing complexes across India.",
     specs: ["Up to 30kW capacity", "Tier-1 panel supply chain", "Structural load certified", "Net metering compliant"],
@@ -14,7 +14,7 @@ const mainServices = [
   {
     title: "Industrial & Commercial Solar",
     size: "col-span-4",
-    image: "https://images.unsplash.com/photo-1497440001374-f26997328c1b?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1497440001374-f26997328c1b?auto=format&fit=crop&w=800&q=80",
     tag: "Industrial",
     desc: "Scalable solar infrastructure for factories, warehouses, and commercial campuses.",
     specs: ["100kW – 5MW+", "MNRE approved EPC", "Substation integration", "Carbon credit advisory"],
@@ -24,17 +24,17 @@ const mainServices = [
 const subServices = [
   {
     title: "Battery Storage Systems",
-    image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=600&q=80",
     desc: "BESS integration for energy resilience — peak shaving, backup power, and grid independence.",
   },
   {
     title: "Energy Audits",
-    image: "https://images.unsplash.com/photo-1555664424-778a1e5e1b48?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1555664424-778a1e5e1b48?auto=format&fit=crop&w=600&q=80",
     desc: "Facility audits using thermal imaging and load profiling to identify optimization opportunities.",
   },
   {
     title: "O&M Contracts",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80",
     desc: "Lifetime O&M with remote monitoring dashboards and predictive preventive maintenance.",
   },
 ];
@@ -78,7 +78,7 @@ export default function Services() {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                   className="absolute inset-0 bg-cover bg-center transition-all duration-1000 saturate-[0.1] group-hover:saturate-[0.4]"
-                  style={{ backgroundImage: `url(${service.image}&fm=webp&q=80&sat=-20)` }}
+                  style={{ backgroundImage: `url(${service.image})` }}
                 />
               </div>
               <div className="px-4">
@@ -111,7 +111,7 @@ export default function Services() {
             >
               <div className="aspect-video rounded-none overflow-hidden mb-8 border border-white/5">
                 <img
-                  src={`${s.image}&fm=webp&q=80`}
+                  src={s.image}
                   alt={`${s.title} integration visualization`}
                   loading="lazy"
                   decoding="async"

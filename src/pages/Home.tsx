@@ -96,7 +96,7 @@ export default function Home() {
           <div
             className="absolute inset-0 bg-cover bg-center transition-all duration-700 saturate-[0.2] hover:saturate-[0.5]"
             style={{
-              backgroundImage: `linear-gradient(to bottom, rgba(3,3,3,0.5) 0%, rgba(3,3,3,0.8) 60%, rgba(3,3,3,1) 100%), url(https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&q=80&fm=webp)`
+              backgroundImage: `linear-gradient(to bottom, rgba(3,3,3,0.5) 0%, rgba(3,3,3,0.8) 60%, rgba(3,3,3,1) 100%), url(https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80)`
             }}
           />
         </motion.div>
@@ -187,7 +187,7 @@ export default function Home() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                 className="absolute inset-0 bg-cover bg-center saturate-[0.1] group-hover:saturate-[0.4] transition-all duration-1000"
-                style={{ backgroundImage: `url(https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1000&q=80&fm=webp)` }}
+                style={{ backgroundImage: `url(https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1000&q=80)` }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
@@ -218,7 +218,7 @@ export default function Home() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                 className="absolute inset-0 bg-cover bg-center saturate-[0.1] group-hover:saturate-[0.4] transition-all duration-1000"
-                style={{ backgroundImage: `url(https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&fm=webp)` }}
+                style={{ backgroundImage: `url(https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80)` }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
