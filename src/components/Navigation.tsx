@@ -41,8 +41,8 @@ export default function Navigation() {
           transition={{ type: "spring", stiffness: 100, damping: 20 }}
         >
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 bg-amber rounded-xl flex items-center justify-center transition-spring group-hover:rotate-12 group-hover:scale-110">
-              <Zap className="w-4 h-4 text-[#050505]" fill="currentColor" aria-hidden="true" />
+            <div className="w-10 h-10 flex items-center justify-center transition-spring group-hover:scale-110">
+              <img src="/tl%20logo.png" alt="Techlab Solars Logo" className="w-full h-full object-contain" />
             </div>
             <span className="font-outfit font-black text-sm tracking-widest uppercase text-foreground">
               Techlab <span className="text-amber">Solars</span>

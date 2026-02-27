@@ -152,8 +152,8 @@ export default function Services() {
       <footer className="border-t border-white/5 py-12">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center">
-              <Zap className="w-4 h-4 text-amber" />
+            <div className="w-8 h-8 flex items-center justify-center">
+              <img src="/tl%20logo.png" alt="" className="w-full h-full object-contain" />
             </div>
             <p className="font-geist text-[10px] text-muted-foreground tracking-[0.3em] uppercase font-bold">
               © 2024 Techlab Solars — Chennai, India
