@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from "framer-motion";
+import SEO from "@/components/shared/SEO";
 
 const metrics = [
   "25.4 MW DEPLOYED",
@@ -110,7 +111,13 @@ export default function Home() {
   const heroOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
 
   return (
-    <main className="bg-[#030303] min-h-screen perpetual-pixel selection:bg-amber/30 selection:text-amber">
+    <>
+      <SEO
+        title="Dominate the Grid"
+        description="Grid-ready solar infrastructure engineered for maximum performance. TechLab Solars delivers enterprise-grade solar solutions from our Chennai headquarters."
+        canonical="https://techlabsolars.com"
+      />
+      <main className="bg-[#030303] min-h-screen perpetual-pixel selection:bg-amber/30 selection:text-amber">
       {/* Hero */}
       <section className="relative min-h-[100dvh] flex flex-col justify-center overflow-hidden">
         <motion.div
@@ -382,5 +389,6 @@ export default function Home() {
         </div>
       </footer>
     </main>
+    </>
   );
 }

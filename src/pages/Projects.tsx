@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Zap, MapPin, ArrowUpRight, ChevronRight } from "lucide-react";
+import SEO from "@/components/shared/SEO";
 
 const projects = [
   {
@@ -51,7 +52,13 @@ const projects = [
 
 export default function Projects() {
   return (
-    <main className="bg-[#030303] min-h-screen pt-32 perpetual-pixel">
+    <>
+      <SEO
+        title="Solar Projects Portfolio"
+        description="25.4 MW deployed across 500+ solar installations. Explore TechLab Solars' portfolio of residential, commercial, and industrial solar projects across India."
+        canonical="https://techlabsolars.com/projects"
+      />
+      <main className="bg-[#030303] min-h-screen pt-32 perpetual-pixel">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -200,5 +207,6 @@ export default function Projects() {
         </div>
       </footer>
     </main>
+    </>
   );
 }

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MapPin, Mail, Phone, Clock, ArrowRight, Zap } from "lucide-react";
 import { motion } from "framer-motion";
+import SEO from "@/components/shared/SEO";
 
 const officeDetails = [
   { icon: MapPin, label: "Address", value: "Techlab Solars Pvt. Ltd.\n18, CBI Colony Main Rd, Kandhanchavadi\nPerungudi, Chennai — 600096\nTamil Nadu, India" },
@@ -25,7 +26,13 @@ export default function Contact() {
   };
 
   return (
-    <main className="bg-[#050505] min-h-screen pt-32 perpetual-pixel">
+    <>
+      <SEO
+        title="Contact - Site Survey"
+        description="Contact TechLab Solars for solar consultation and site surveys. Based in Chennai, serving all of India with professional solar energy solutions."
+        canonical="https://techlabsolars.com/contact"
+      />
+      <main className="bg-[#050505] min-h-screen pt-32 perpetual-pixel">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -227,5 +234,6 @@ export default function Contact() {
         </div>
       </footer>
     </main>
+    </>
   );
 }

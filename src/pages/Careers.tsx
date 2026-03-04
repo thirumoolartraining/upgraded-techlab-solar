@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Zap, ChevronRight, ArrowRight, Shield, Globe, Cpu } from "lucide-react";
+import SEO from "@/components/shared/SEO";
 
 const jobs = [
   {
@@ -52,7 +53,13 @@ export default function Careers() {
   const [applied, setApplied] = useState<string | null>(null);
 
   return (
-    <main className="bg-[#030303] min-h-screen pt-32 perpetual-pixel">
+    <>
+      <SEO
+        title="Careers - Join Our Team"
+        description="Join TechLab Solars engineering team. Explore solar engineering and technical opportunities at India's leading solar infrastructure company based in Chennai."
+        canonical="https://techlabsolars.com/careers"
+      />
+      <main className="bg-[#030303] min-h-screen pt-32 perpetual-pixel">
       {/* Hero */}
       <section className="relative py-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
@@ -179,5 +186,6 @@ export default function Careers() {
         </div>
       </footer>
     </main>
+    </>
   );
 }

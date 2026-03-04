@@ -1,0 +1,15 @@
+# TechLab Solars: 2026 Coding Standards
+
+## 1. TypeScript Rules
+- **Strict Mode:** No implicit `any`. All props must have defined interfaces.
+- **Zod:** Use Zod for any form validation or API response parsing.
+
+## 2. UI & UX (shadcn + Framer Motion)
+- **Glassmorphism:** Maintain the existing aesthetic. Use `backdrop-blur` and thin borders.
+- **Accessibility:** Every interactive element MUST have an `aria-label`.
+- **Animations:** Use `layout` prop in Framer Motion to prevent layout shifts.
+
+## 3. SEO & Performance
+- **Image Opt:** Never use `<img>`. Use a custom `OptimizedImage` component with `loading="lazy"`.
+- **Meta Tags:** Every page component must include a `Helmet` or `SEO` wrapper.
+- **Testing:** New features MUST include a `.test.ts` file using Vitest.

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, ChevronRight, Zap } from "lucide-react";
 import { motion } from "framer-motion";
+import SEO from "@/components/shared/SEO";
 
 const mainServices = [
   {
@@ -41,7 +42,13 @@ const subServices = [
 
 export default function Services() {
   return (
-    <main className="bg-[#030303] min-h-screen pt-32 perpetual-pixel">
+    <>
+      <SEO
+        title="Solar Energy Services"
+        description="Professional solar energy services including site survey, design, installation, and monitoring. TechLab Solars delivers comprehensive solar solutions across India."
+        canonical="https://techlabsolars.com/services"
+      />
+      <main className="bg-[#030303] min-h-screen pt-32 perpetual-pixel">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -169,5 +176,6 @@ export default function Services() {
         </div>
       </footer>
     </main>
+    </>
   );
 }

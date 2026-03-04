@@ -1,0 +1,42 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#030303"/>
+  
+  <!-- Grain texture overlay -->
+  <rect width="1200" height="630" fill="url(#grain)" opacity="0.03"/>
+  
+  <!-- Grid pattern -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,184,0,0.05)" stroke-width="1"/>
+    </pattern>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  
+  <!-- Accent line -->
+  <line x1="100" y1="315" x2="200" y2="315" stroke="#FFB800" stroke-width="2"/>
+  
+  <!-- Main text -->
+  <text x="100" y="280" font-family="Arial, sans-serif" font-size="80" font-weight="900" fill="#FFFFFF" letter-spacing="-2">
+    TECHLAB SOLARS
+  </text>
+  
+  <!-- Tagline -->
+  <text x="100" y="360" font-family="Arial, sans-serif" font-size="28" font-weight="300" fill="#999999" letter-spacing="1">
+    Solar Energy Infrastructure — Chennai, India
+  </text>
+  
+  <!-- Stats -->
+  <text x="100" y="480" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#FFB800">
+    25.4 MW DEPLOYED
+  </text>
+  <text x="100" y="510" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#FFB800">
+    500+ INSTALLATIONS
+  </text>
+  
+  <!-- Bottom accent -->
+  <rect x="100" y="560" width="1000" height="1" fill="rgba(255,184,0,0.2)"/>
+</svg>
